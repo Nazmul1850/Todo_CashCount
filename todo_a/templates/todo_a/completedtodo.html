@@ -3,13 +3,14 @@
 {% extends 'todo_a/base.html' %}
 {% block content %}
 {% csrf_token %}
-Current
+Completed
 <ul>
 {% for todo in todos %}
  <li>
    <a href="{% url 'viewtodo' todo.id %}">
    {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>{% endif %}
-   {% if todo.memo %}--{{ todo.memo }}{% endif %}
+   {% if todo.memo %}--{{ todo.memo }}{% endif %}<br>
+   {{ todo.datecompleted|date:'M j Y H:i' }}
    </a>
  </li>
 {% endfor %}
