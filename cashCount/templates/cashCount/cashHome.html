@@ -1,0 +1,19 @@
+
+
+{% extends 'cashCount/cbase.html' %}
+{% block content %}
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1>Track Your Costing And Income. Woo!</h1>
+            <p>Its difficult to track all the money given to someone or taken from someone. Its a simple app that tracks the costing <b>Memo</b>.Makes it really easy for you.<br>Lets fix your <b>Budget</b> </p>
+        <a role="button" class="btn btn-primary btn-lg" href="{% url 'cashCount:FixBudget' %}">Start</a>
+        </div>
+    </div>
+{% endblock %}

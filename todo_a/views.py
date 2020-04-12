@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return render(request,'todo_a\home.html')
 
+
 def signupUser(request):
     if request.method == 'GET':
         return render(request,'todo_a\signupUser.html',{ 'form': UserCreationForm()})
@@ -66,6 +67,11 @@ def currenttodo(request):
 def completedtodo(request):
     todos = TODO.objects.filter(user=request.user,datecompleted__isnull=False).order_by('-datecompleted')
     return render(request,'todo_a\completedtodo.html',{'todos':todos})
+
+
+
+
+
 
 @login_required
 def viewtodo(request,todo_pk):

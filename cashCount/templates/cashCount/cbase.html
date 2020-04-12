@@ -1,6 +1,8 @@
 
 
 
+
+
 {% load static %}
 <!doctype html>
 <html lang="en">
@@ -24,7 +26,7 @@
   <div class="container">
     <a class="navbar-brand" href="{% url 'home' %}">
       <img src="{% static "todo_a/logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Nick's Logo">
-      <span>TODOS</span>
+      <span>CASHCOUNT</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,20 +35,20 @@
       {% if user.is_authenticated %}
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'createtodo' %}">Create</a>
+            <a class="nav-link" href="{% url 'cashCount:createCashMemo' %}">Create</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'currenttodo' %}">Current</a>
+            <a class="nav-link" href="{% url 'cashCount:completedCashMemo' %}">ShowMemos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'completedtodo' %}">Completed</a>
+            <a class="nav-link" href="{% url 'cashCount:FixBudget' %}">Budget</a>
           </li>
         </ul>
       {% endif %}
         <ul class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
           <li>
-            <a role="button" href="{% url 'cashCount:cashMemo' %}" class="btn btn-primary">CashCountApp</a>
+            <a role="button" href="{% url 'currenttodo' %}" class="btn btn-primary">TODOS</a>
           </li>
           <li class="nav-item">
             <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>

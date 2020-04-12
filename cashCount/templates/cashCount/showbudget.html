@@ -1,0 +1,30 @@
+
+
+
+
+{% extends 'cashCount/cbase.html' %}
+{% block content %}
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1>Your Current Budget :</h1>
+                 <h2>{{ error }}</h2>
+                 {% if cashBud %}
+                   <button type="button" name="button" class="btn btn-primary btn-lg">{{ cashBud.budget }}</button><br><br>
+                   <a type="button" name="button" class="btn btn-primary btn-sm" action="#">UPDATE</a>
+                 {% else %}
+                   <div class="text-center">
+                       <h2>Looks like you don't have a budget!! Lets Fix a Budget</h2>
+                   <br>
+                   <a role="button" class="btn btn-primary" href="{% url 'cashCount:FixBudget' %}">New Budget</a>
+                   </div>
+                   {% endif %}
+        </div>
+    </div>
+{% endblock %}
