@@ -93,7 +93,7 @@ def FixBudget(request):
                         alltaken += x.cost
                     if x.given:
                         allgiven += x.cost
-                bud.budget = bud.budget + alltaken - allgiven
+                bud.budget = bud.budget - alltaken + allgiven
                 return render(request,'cashCount/fixBudget.html',{ 'form':FixBudetForm(),'cashBudget':bud})
         return render(request,'cashCount/fixBudget.html',{ 'form':FixBudetForm()})
     else:

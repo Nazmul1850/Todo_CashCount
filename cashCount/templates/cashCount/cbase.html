@@ -25,8 +25,12 @@
     <nav id="topNav" class="navbar navbar-expand-md navbar-light bg-warning">
   <div class="container">
     <a class="navbar-brand" href="{% url 'home' %}">
-      <img src="{% static "todo_a/logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Nick's Logo">
-      <span>CASHCOUNT</span>
+      <img src="{% static "todo_a/logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Nazmul's Logo">
+      {% if user.is_authenticated %}
+      <span>HI, <b>{{ user.username }}</b><small> Your CASHCOUNT</small></span>
+      {% else %}
+      <span>TODOS & CASHCOUNT</span>
+      {% endif %}
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
