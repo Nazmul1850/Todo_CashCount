@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'todo_a/base.html' %}
 {% block content %}
 {% if user.is_authenticated %}
@@ -36,3 +37,48 @@
 
 {% endif %}
 {% endblock %}
+=======
+{% extends 'todo_a/base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1>Remember Your Event and Track Your Cash!</h1>
+                 <p>Hey You Are <b>LoogedIn</b> </p>
+        <a role="button" class="btn btn-primary btn-lg" href="{% url 'currenttodo' %}">SEE TODOS</a>
+        </div>
+    </div>
+
+{% else %}
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1>Remember Your Event and Track Your Cash!</h1>
+            <p>Life is fun. But life is also busy. There's a million different things you could be doing. But what matters is <u>what</u> you do. I created <b><i>Todos & CashCount</i></b> to help you make things easier for you. Track your money <b>Borrowed</b> from someone or <b>Lend</b> to someone.  Your new organized life awaits.</p>
+        <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupUser' %}">Start</a>
+        </div>
+    </div>
+
+{% endif %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="https://nazmul.pythonanywhere.com/" target = "blank"><p style="text-align:center">About Developer</p></a>
+{% endblock %}
+>>>>>>> 3cfb62cb92201527bf083813744b3d9e915cc90a
