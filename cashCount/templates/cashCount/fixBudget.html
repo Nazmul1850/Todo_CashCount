@@ -17,10 +17,11 @@
             {% csrf_token %}
             <div class="form-group">
               <div class="col-md-10 text-center">
-              <h1>Your Current Status :</h1>
+              <h1>Your Current Status:</h1>
                 <button type="button" name="button" class="btn btn-primary btn-lg">{{ cashBudget.budget }}</button><br><br>
               </div>
                 <label for="budget">Budget</label><br>
+                <small><b>Create</b> a memo! The information given there will be uploaded in your <b>Budget</b>.<br></small>
                 <small> <b>Taken</b> and <b>Given</b> amount still counted if not deleted the <b>Memo</b></small>
                 <input type="number" name="budget" class="form-control" id="budget">
             </div>
