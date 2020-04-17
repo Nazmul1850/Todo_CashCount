@@ -17,25 +17,28 @@
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title"><b>Title</b></label><br>
+                <small>'e.g <b>Shopping</b>'</small>
                 <input type="text" name="title" class="form-control" id="title" required>
             </div>
             <div class="form-group">
-                <label for="memo">Memo</label>
+                <label for="memo"><b>Memo</b></label><br>
+                <small>'e.g <b>Pant, Shirt</b> etc or a description of the costing'</small>
                 <textarea name="memo" class="form-control" id="memo" ></textarea>
             </div>
             <div class="form-group">
-                <label for="cost">Amount</label><br>
+                <label for="cost"><b>Amount</b> <small>(in taka)</small></label><br>
                 <input type="number" name="cost" class="form-control" id="cost">
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" name="taken" class="form-check-input" id="taken">
-                <label class="form-check-label" for="taken">Taken From You</label>
+                <label class="form-check-label" for="taken"><b>Taken Or Given</b></label><br>
+                <small>Tick if the amount <b>Taken</b> from you and keep Untick if <b>Given</b> to you</small>
             </div>
-            <div class="form-group form-check">
+            <!--<div class="form-group form-check">
                 <input type="checkbox" name="given" class="form-check-input" id="given">
                 <label class="form-check-label" for="taken">Given To You</label>
-            </div>
+            </div>-->
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
     </div>

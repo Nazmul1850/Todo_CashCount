@@ -67,7 +67,7 @@ def completedCashMemo(request):
     for x in cash:
         if x.taken:
             alltaken += x.cost
-        if x.given:
+        else:
             allgiven += x.cost
     return render(request,'cashCount/completedCashMemo.html',{'cash':cash,'alltaken':alltaken,'allgiven':allgiven})
 
@@ -91,7 +91,7 @@ def FixBudget(request):
                 for x in cash:
                     if x.taken:
                         alltaken += x.cost
-                    if x.given:
+                    else:
                         allgiven += x.cost
                 bud.budget = bud.budget - alltaken + allgiven
                 return render(request,'cashCount/fixBudget.html',{ 'form':FixBudetForm(),'cashBudget':bud})

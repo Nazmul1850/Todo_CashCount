@@ -4,7 +4,7 @@ from .models import CashMemo,FixBudetModel
 class CashMemoForm(ModelForm):
     class Meta:
         model = CashMemo
-        fields = ['title','memo','cost','taken','given']
+        fields = ['title','memo','cost','taken']
 
 class FixBudetForm(ModelForm):
     class Meta:

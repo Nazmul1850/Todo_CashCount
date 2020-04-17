@@ -1,10 +1,6 @@
 {% extends 'cashCount/cbase.html' %}
 {% block content %}
-<div class="row justify-content-center mt-5">
-    <div class="col-md-5">
-        <h2>Fix Your Budget</h2>
-    </div>
-</div>
+
 <div class="row justify-content-center mt-5">
     <div class="col-md-5">
         {% if error %}
@@ -18,8 +14,13 @@
             <div class="form-group">
               <div class="col-md-10 text-center">
               <h1>Your Current Status:</h1>
-                <button type="button" name="button" class="btn btn-primary btn-lg">{{ cashBudget.budget }}</button><br><br>
+                <button type="button" name="button" class="btn btn-primary btn-lg">{{ cashBudget.budget }}</button><br>
               </div>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-8">
+                        <h2>Update Budget</h2>
+                    </div>
+                </div>
                 <label for="budget">Budget</label><br>
                 <small><b>Create</b> a memo! The information given there will be uploaded in your <b>Budget</b>.<br></small>
                 <small> <b>Taken</b> and <b>Given</b> amount still counted if not deleted the <b>Memo</b></small>
@@ -28,6 +29,11 @@
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
         {% else %}
+          <div class="row justify-content-center mt-5">
+              <div class="col-md-8">
+                  <h2>Fix Your Budget</h2>
+              </div>
+          </div>
           <form method="POST">
               {% csrf_token %}
               <div class="form-group">

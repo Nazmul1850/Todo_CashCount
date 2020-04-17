@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row justify-content-center mt-5">
     <div class="col-md-10">
-        <h1>All Memos</h1>
+        <h1>All CashMemos</h1>
         <h3>Total Taken Amount {{ alltaken }} Taka</h3>
         <h3>Total Given Amount {{ allgiven }} Taka</h3>
     </div>
@@ -15,9 +15,9 @@
             {% for x in cash %}
                 <a href="{% url 'cashCount:showCashMemo' x.id %}" class="list-group-item list-group-item-action{% if x.taken %} list-group-item-danger{% endif %}">
                   <b>{{ x.title }}<b><br>
-                  {% if x.taken %}<span><small>Amount Taken</small> {{ x.cost }} <small>Taka</small></span><br>{% endif %}
-                  {% if x.given %}<span><small>Amount Given</small> {{ x.cost }} <small>Taka</small></span><br>{% endif %}
-                  {% if x.memo %}({{ x.memo|truncatechars:10 }}){% endif %}<br>
+                  {% if x.taken %}<span><small>Amount Taken</small> {{ x.cost }} <small>Taka</small></span><br>
+                  {% else %}<span><small>Amount Given</small> {{ x.cost }} <small>Taka</small></span><br>{% endif %}
+                  {% if x.memo %}({{ x.memo|truncatechars:50 }}){% endif %}<br>
                   <small>Created in </small>{{ x.created|date:'M j Y H:i' }}
                 </a>
             {% endfor %}

@@ -3,10 +3,10 @@
 
 <div class="row justify-content-center mt-5">
     <div class="col-md-5">
-        <h2>New Todo</h2>
+        <h2>Update Todo</h2>
     </div>
 </div>
-<div class="row justify-content-center mt-5">
+<div class="row justify-content-center mt-4">
     <div class="col-md-5">
         {% if error %}
             <div class="alert alert-danger" role="alert">
@@ -16,16 +16,17 @@
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title"><b>Title</b></label>
                 <input type="text" name="title" class="form-control" id="title" value="{{ todo.title }}" required>
             </div>
             <div class="form-group">
-                <label for="memo">Memo</label>
+                <label for="memo"><b>Memo</b></label>
                 <textarea name="memo" rows="5" class="form-control" id="memo" >{{ todo.memo }}</textarea>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" name="important" class="form-check-input" id="important" {% if todo.important %}checked{% endif %}>
-                <label class="form-check-label" for="important">Important</label>
+                <label class="form-check-label" for="important"><b>Important</b></label><br>
+                <small>If this is your important task then tick the option and it will be highlighted in your list</small>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="button" class="btn btn-success" onclick="$('#complete').click()">Complete</button>

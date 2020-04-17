@@ -8,7 +8,7 @@
 
 <div class="row justify-content-center mt-5">
     <div class="col-md-5">
-        <h2>New Todo</h2>
+        <h2>Edit CashMemo</h2>
     </div>
 </div>
 <div class="row justify-content-center mt-5">
@@ -21,25 +21,23 @@
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title"><b>Title</b></label>
                 <input type="text" name="title" class="form-control" id="title" value="{{ cash.title }}" required>
             </div>
             <div class="form-group">
-                <label for="memo">Memo</label>
+                <label for="memo"><b>Memo</b></label>
                 <textarea name="memo" rows="5" class="form-control" id="memo" >{{ cash.memo }}</textarea>
             </div>
             <div class="form-group">
-                <label for="cost">Amount</label><br>
+                <label for="cost"><b>Amount</b></label><br>
                 <input type="number" name="cost" class="form-control" id="cost" value="{{ cash.cost }}">
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" name="taken" class="form-check-input" id="important" {% if cash.taken %}checked{% endif %}>
-                <label class="form-check-label" for="taken">Taken</label>
+                <label class="form-check-label" for="taken"><b>Taken or Given</b></label><br>
+                <small>Tick if the amount <b>Taken</b> from you and  Untick if <b>Given</b> to you</small>
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" name="given" class="form-check-input" id="given" {% if cash.given %}checked{% endif %}>
-                <label class="form-check-label" for="given">Given</label>
-            </div>
+
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="button" class="btn btn-danger" onclick="$('#delete').click()">Delete</button>
         </form>
