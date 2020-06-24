@@ -50,7 +50,7 @@
         <ul class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
           <li>
-            <a role="button" href="{% url 'cashCount:cashMemo' %}" class="btn btn-primary">CashCountApp</a>
+            <a class="nav-link" href="{% url 'cashCount:cashMemo' %}">CashCount</a>
           </li>
           <li class="nav-item">
             <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
@@ -68,6 +68,9 @@
                   <a class="nav-link" href="{% url 'loginUser' %}">Login</a>
               </li>
           {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'tips' %}">Tips</a>
+          </li>
       </ul>
     </div>
 

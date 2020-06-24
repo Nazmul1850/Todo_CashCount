@@ -12,6 +12,9 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return render(request,'todo_a/home.html')
 
+def tips(request):
+    return render(request,'todo_a/tips.html')
+
 
 def signupUser(request):
     if request.method == 'GET':

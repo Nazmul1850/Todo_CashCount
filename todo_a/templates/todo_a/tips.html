@@ -1,0 +1,37 @@
+{% extends 'todo_a/base.html' %}
+{% block content %}
+<div class="container">
+  <h1>Here is some tips for using this application</h1>
+  <ol type="A">
+    <li>
+      Click your name and it will take you to the homepage.
+    </li>
+    <li>
+      You can do two things:
+      <ol type="1">
+        <li> Make and track your event list. </li>
+        <li>Fix your budget and track the money, "spend or earned"</li>
+      </ol>
+    </li>
+    <li>In the todo app you have 3 options:
+      <ol type="1">
+        <li><b>Create</b>    : You can create a new event with title, memo and you can mark this event as important</li>
+        <li><b>Current</b>   : You can see your current todos. Important ones will be highlighted.
+                        By clicking an event you can edit, mark as completed and delete the event</li>
+        <li><b>Completed</b> : You can see the completed events and the time when completed then you can delete the event.</li>
+      </ol>
+    </li>
+    <li>
+      In the CashCount app you have 3 options:
+      <ol type="1">
+        <li><b>Create</b> :  You can create a new Cash Memo with title, memo, amount and mark if the money
+           taken from you or given to you</li>
+        <li><b>ShowMemos</b> : You can see your current memos. Also you can see total money taken from you or given to you.
+          In the memo list you also can see the time when that memo was created. By clicking an event you can edit and delete the Memo.
+        </li>
+        <li><b>Budget</b> : Now this is where your total budget is fixed and updated whenever a memo is created.</li>
+      </ol>
+      <li>You can interchange between these two application by clicking <b>TODOS</b> or <b>CashCount</b> button.
+  </ol>
+</div>
+{% endblock %}
